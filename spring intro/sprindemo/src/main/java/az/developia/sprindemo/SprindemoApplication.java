@@ -12,12 +12,19 @@ public class SprindemoApplication {
 		=SpringApplication.run(SprindemoApplication.class, args);
 		String[] beans=c.getBeanDefinitionNames();
 		
-		for(String b : beans) {
-			System.out.println(b);
-		}
+		Computer hp=c.getBean(Computer.class);
+		System.out.println(hp.getModel());
+		System.out.println(hp.getPrice());
+		System.out.println(hp.getRam());
 		
-		Student s=c.getBean(Student.class);
-		System.out.println(s.name);
-	}
+		
+//		for(String b : beans) {
+//			System.out.println(b);
+//		}
+//		
+//		Student s=c.getBean(Student.class);
+//		System.out.println(s.name);
+//	}
 
+}
 }
