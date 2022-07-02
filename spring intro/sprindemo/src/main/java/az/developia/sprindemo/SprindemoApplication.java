@@ -15,7 +15,8 @@ public class SprindemoApplication {
 		Computer hp=c.getBean(Computer.class);
 		System.out.println(hp.getModel());
 		System.out.println(hp.getPrice());
-		System.out.println(hp.getRam());
+		System.out.println(hp.getRam().getSize());
+		System.out.println(hp.getCpu().getSpeed());
 		
 		
 //		for(String b : beans) {

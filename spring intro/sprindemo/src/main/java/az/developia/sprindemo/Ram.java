@@ -6,6 +6,12 @@ import org.springframework.stereotype.Component;
 public class Ram {
 	private int size;
 	private String model;
+	
+	public Ram() {
+		model="g62";
+		size=24;
+		
+	}
 	public int getSize() {
 		return size;
 	}
