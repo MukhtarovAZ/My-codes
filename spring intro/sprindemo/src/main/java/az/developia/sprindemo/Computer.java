@@ -1,21 +1,25 @@
 package az.developia.sprindemo;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(scopeName="prototype")
 public class Computer {
 	private String model;
 	private int price;
 	//@Autowired;
 	private Cpu cpu;
 	//@Autowired
-	private Ram ram;
 	
-	//public Computer(Ram ram,Cpu cpu) {
-	//	this.ram=ram;
-	//	this.setCpu(cpu);
-	//}
+	private static int objectCount=0;
+	
+	public Computer() {
+		objectCount++;
+		System.out.println("Computer obyekti sayi="+objectCount);
+	}
 	
 	public String getModel() {
 		return model;
@@ -29,14 +33,7 @@ public class Computer {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public Ram getRam() {
-		return ram;
-	}
-	@Autowired
-	public void setRam(Ram ram) {
-		this.ram = ram;
-	}
-
+	
 	public Cpu getCpu() {
 		return cpu;
 	}
