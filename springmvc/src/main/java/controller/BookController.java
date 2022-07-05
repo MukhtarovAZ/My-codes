@@ -11,6 +11,11 @@ public class BookController {
 		return "books";
 	}
 	
+	@GetMapping
+	public String showHomePage() {
+		return "home";
+	}
+	
 	@GetMapping("/cars")
 	public String showCarsPage() {
 		return "cars";
