@@ -1,4 +1,4 @@
-package az.developia.sprindemo;
+package components;
 
 import org.springframework.stereotype.Component;
 
