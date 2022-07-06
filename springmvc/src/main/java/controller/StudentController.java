@@ -30,7 +30,7 @@ public class StudentController {
 	@PostMapping("/save")
 	public String saveStudent(@ModelAttribute(name="student")Student s) {
 		System.out.println(s.getName());
-			 return "books";
+			 return "books.html";
 	}
 
 }

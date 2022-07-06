@@ -14,16 +14,7 @@ public class SearchController {
 	
 	List<Car> cars=new ArrayList<Car>();
 	{
-	cars.add(new Car(1,"Ford",120));
-	cars.add(new Car(2,"Kia",200));
-	cars.add(new Car(3,"Mercedes",300));
-	cars.add(new Car(4,"BMW",500));
-	cars.add(new Car(5,"Toyota",400));
-	cars.add(new Car(6,"Tesla",4100));
-	cars.add(new Car(6,"KIA",1400));
-	cars.add(new Car(8,"BMW",43300));
-	cars.add(new Car(9,"KIA",1200));
-	cars.add(new Car(10,"Toyota",1300));
+	
 	}
 	
 	@GetMapping("/search")
