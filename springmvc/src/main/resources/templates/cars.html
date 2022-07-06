@@ -26,14 +26,10 @@ border:1px solid black;
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>1</td><td>220</td><td>BMW</td>
-</tr>
-<tr>
-<td>2</td><td>300</td><td>KIA</td>
-</tr>
-<tr>
-<td>3</td><td>500</td><td>FORD</td>
+<tr th:each="car : ${cars}">
+<td th:text="${car.id">
+<td th:text="${car.speed">
+<td th:text="${car.brand]">
 </tr>
 </tbody>
 

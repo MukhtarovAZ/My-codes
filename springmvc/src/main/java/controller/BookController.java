@@ -15,12 +15,12 @@ public class BookController {
 	public String showHomePage() {
 		return "home";
 	}
-	@GetMapping("/books")
+	@GetMapping(value="/books")
 	public String showBooksPage() {
 		return "books";
 	}
 
-	@GetMapping("/cars")
+	@GetMapping(value="/cars") 
 	public String showCarsPage(Model model) {
 		List<Car> cars=new ArrayList<Car>();
 		cars.add(new Car(1,"Ford",120));
@@ -29,9 +29,9 @@ public class BookController {
 		cars.add(new Car(4,"BMW",500));
 		cars.add(new Car(5,"Toyota",400));
 		model.addAttribute("cars",cars);
-		
 		return "cars";
 	}
 	
 
 }
+ 
