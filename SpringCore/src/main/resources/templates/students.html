@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Telebeler</title>
+    <style type="text/css">
+        table{
+            width: 100%;
+border: 1px solid black
+        }
+th,td{
+border: 1px solid black
+}
+    </style>
+</head>
+<body>
+<a th:href="@{/}">Esas Sehife</a>
+<h1>Telebeler</h1>
+<hr>
+<table>
+<tr>
+    <th>Nomre</th>
+    <th>Ad</th>
+    <th>Soyad</th>
+    <th>Telefon</th>
+    <th>Adress</th>
+</tr>
+<thead>
+<tbody>
+<tr th:each="s : ${students}">
+<td th:text="${s.id}">
+    <td th:text="${s.name}">
+    <td th:text="${s.surname}">
+    <td th:text="${s.phone}">
+    <td th:text="${s.adress}">
+</tr>
+</tbody>
+</thead>
+</table>
+
+</body>
+</html>
