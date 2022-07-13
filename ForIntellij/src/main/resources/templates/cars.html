@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Masinlar</title>
+    <style type="text/css">table{
+        width: 100%;
+    border: 1px solid black
+    }
+    th,td{
+        border: 1px solid black
+    }
+
+    </style>
+</head>
+<body>
+<a th:href="@{/}">Esas Sehife</a>
+
+<h1>Masinlar</h1>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>Nomre</th>
+        <th>Suret</th>
+        <th>Marka</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${cars}">
+        <td th:text="${c.id}">
+        <td th:text="${c.speed}">
+        <td th:text="${c.brand}">
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
