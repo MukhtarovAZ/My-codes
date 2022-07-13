@@ -25,4 +25,6 @@ public class StudentController {
     public String showHomePage(){
         return "home";
     }
+
 }
+
