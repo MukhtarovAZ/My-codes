@@ -18,7 +18,6 @@ public class CarRepository {
 
 
     @Autowired
-
     private DataSource dataSource;
 
     public  List<Car> getCars() {
@@ -41,6 +40,23 @@ public class CarRepository {
             e.printStackTrace();
         }
         return cars;
+    }
+    public void save(Car c){
+        try {
+            Connection conn=dataSource.getConnection();
+            Statement st=conn.createStatement();
+
+            Statement stm =conn.createStatement();
+            st.executeUpdate("insert into cars (brand,speed)"+
+                    "values ('"+c.getBrand()+"'"+c.getSpeed()+");");
+
+            st.close();
+            conn.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 

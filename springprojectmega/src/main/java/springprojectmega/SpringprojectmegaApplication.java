@@ -1,13 +1,13 @@
-package az.developia.webmvcdemo1;
+package springprojectmega;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class  Webmvcdemo1Application {
+public class SpringprojectmegaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Webmvcdemo1Application.class, args);
+        SpringApplication.run(SpringprojectmegaApplication.class, args);
     }
 
 }

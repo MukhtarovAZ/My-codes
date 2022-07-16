@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StudentController{
 
     @GetMapping("/show-save-page")
-    public String showStudentSavePage(Model model){
+    public String showSavePage(Model model){
         Student s=new Student();
        // s.setName("Ramazan");
      //   s.setSurname("Muxtarov");

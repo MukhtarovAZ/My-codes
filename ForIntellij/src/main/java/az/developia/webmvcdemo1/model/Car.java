@@ -34,4 +34,7 @@ public class Car {
         this.brand = brand;
         this.speed = speed;
     }
+
+    public Car() {
+    }
 }
