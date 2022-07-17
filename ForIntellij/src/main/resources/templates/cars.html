@@ -35,7 +35,8 @@
         <td th:text="${c.speed}"></td>
         <td th:text="${c.brand}"></td>
         <td >
-            <a th:href="@{/cars/delete/{id}(id=${c.id})}">Sil</a>
+            <a onclick="return confirm('eminsen?');" th:href="@{/cars/delete/{id}(id=${c.id})}">Sil</a>
+            <a th:href="@{/cars/edit/{id}(id=${c.id})}">Redakte</a>
         </td>
     </tr>
     </tbody>

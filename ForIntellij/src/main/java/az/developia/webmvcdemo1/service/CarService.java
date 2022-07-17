@@ -23,7 +23,16 @@ public class CarService {
     public void deleteById(Integer id){
         carRepository.deleteById(id);
     }
+    public void editById(Integer id){
+        carRepository.editById(id);
+    }
+    public Car findById(Integer id){
+        return carRepository.findById(id);
+    }
 
 
+    public void edit(Car c) {
+        carRepository.edit(c);
+    }
 }
 

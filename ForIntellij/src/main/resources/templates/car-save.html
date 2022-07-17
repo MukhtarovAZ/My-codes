@@ -17,6 +17,7 @@
     <a th:href="@{/cars/list}">Masinlar</a>
     <hr>
     <form th:object="${car}" th:action="@{/cars/save}" method="POST">
+        <input type="hidden" th:field="*{id}">
         <input placeholder="Bura maşının markası yaz"
                class="form-control" th:field="*{brand}"><br>
         <input placeholder="Bura maşın sürətini yaz"

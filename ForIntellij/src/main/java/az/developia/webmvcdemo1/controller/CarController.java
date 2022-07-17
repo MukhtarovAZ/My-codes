@@ -31,7 +31,12 @@ public class CarController {
 
     @PostMapping("/save")
     public String save(@ModelAttribute(name = "car") Car c){
-
+        System.out.println(c);
+        if(c.getId()==null){
+            carService.save(c);
+        }else {
+            carService.edit(c);
+        }
         carService.save(c);
 
         return "redirect:/cars/list;";
@@ -42,6 +47,14 @@ public class CarController {
         carService.deleteById(id);
         return "redirect:/cars/list;";
     }
+    @GetMapping("/edit/{id}")
+    public String showEditPage(@PathVariable Integer id,Model model) {
+        Car c=carService.findById(id);
+        System.out.println(c);
+        model.addAttribute("car",c);
+        return "car-save";
+    }
+
 
 }
 
