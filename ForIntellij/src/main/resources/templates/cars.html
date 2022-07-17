@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Masinlar</title>
+
     <style type="text/css">table{
         width: 100%;
     border: 1px solid black
@@ -25,14 +26,17 @@
         <th>Nomre</th>
         <th>Suret</th>
         <th>Marka</th>
+        <th>Emeliyatlar</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="c : ${cars}">
-        <td th:text="${c.id}">
-        <td th:text="${c.speed}">
-        <td th:text="${c.brand}">
-
+    <tr th:each="c : ${cars}"></td>
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.speed}"></td>
+        <td th:text="${c.brand}"></td>
+        <td >
+            <a th:href="@{/cars/delete/{id}(id=${c.id})}">Sil</a>
+        </td>
     </tr>
     </tbody>
 </table>

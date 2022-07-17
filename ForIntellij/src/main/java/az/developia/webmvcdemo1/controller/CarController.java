@@ -1,15 +1,12 @@
 package az.developia.webmvcdemo1.controller;
 
 import az.developia.webmvcdemo1.model.Car;
-import az.developia.webmvcdemo1.model.Student;
+
 import az.developia.webmvcdemo1.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/cars")
@@ -37,6 +34,12 @@ public class CarController {
 
         carService.save(c);
 
+        return "redirect:/cars/list;";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        carService.deleteById(id);
         return "redirect:/cars/list;";
     }
 

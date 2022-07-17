@@ -20,6 +20,9 @@ public class CarService {
     public void save(Car c){
         carRepository.save(c);
     }
+    public void deleteById(Integer id){
+        carRepository.deleteById(id);
+    }
 
 
 }

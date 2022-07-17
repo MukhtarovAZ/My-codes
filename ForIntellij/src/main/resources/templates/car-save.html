@@ -14,6 +14,7 @@
 <body>
 <div style="width: 30%; margin: auto;">
     <h1>Yeni maşın qeydiyyatı</h1>
+    <a th:href="@{/cars/list}">Masinlar</a>
     <hr>
     <form th:object="${car}" th:action="@{/cars/save}" method="POST">
         <input placeholder="Bura maşının markası yaz"

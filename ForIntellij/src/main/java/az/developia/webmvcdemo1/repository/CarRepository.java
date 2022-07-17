@@ -57,6 +57,24 @@ public class CarRepository {
             e.printStackTrace();
         }
 
+
+    }
+    public void deleteById(Integer id){
+
+        try {
+            Connection conn=dataSource.getConnection();
+            Statement st=conn.createStatement();
+
+            Statement stm =conn.createStatement();
+            st.executeUpdate("delete  from cars where id="+id);
+
+            st.close();
+            conn.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 
