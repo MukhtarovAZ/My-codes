@@ -1,8 +1,18 @@
 package az.developia.webmvcdemo1.model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Car {
     private Integer id;
+    @Size(min=2,message = "Marka minimum 2 simvol olmalıdır")
+    @Size(max = 20,message ="Marka Maximum 2 simvol olmalıdır" )
     private String brand;
+    @Min(value = 100)
+    @NotNull
+    @Max(value = 1000)
     private Integer speed;
 
     public Integer getId() {
