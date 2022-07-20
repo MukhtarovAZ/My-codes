@@ -72,7 +72,12 @@ public class CarController {
         binder.registerCustomEditor(String.class,e);
 
     }
+    @GetMapping("/search")
+    public String search(@RequestParam(name = "brand")String brand,
+                         Model model) {
+        model.addAttribute("cars",carService.searchCars(brand));
+        return "cars";
+    }
+    }
 
-
-}
 

@@ -16,7 +16,6 @@ public class Car {
     @Size(min = 2, message = "Marka minimum 2 simvol olmalıdır")
     @Size(max = 20, message = "Marka Maximum 2 simvol olmalıdır")
     @Java3
-    @Trim
     private String brand;
    // @Min(value = 100)
    // @NotNull

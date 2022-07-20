@@ -140,6 +140,30 @@ public class CarRepository {
     }
 
 
+    public  List<Car> searchCars(String brand) {
+        List<Car> cars = new ArrayList<Car>();
+        try {
+            Connection conn = dataSource.getConnection();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery
+                    ("select * from cars where brand ='"+brand+"';");
+            while (rs.next()) {
+                Car c = new Car(rs.getInt("id"),
+                        rs.getString("brand"),
+                        rs.getInt("speed"),
+                        rs.getDate("made_date"),
+                        rs.getString("email") );
+                cars.add(c);
+            }
+            rs.close();
+            st.close();
+            conn.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cars;
+    }
+    }
 
 
-}

@@ -32,5 +32,9 @@ public class CarService {
     public void edit(Car c) {
         carRepository.edit(c);
     }
+
+    public Object searchCars(String brand) {
+        return carRepository.searchCars(brand);
+    }
 }
 
