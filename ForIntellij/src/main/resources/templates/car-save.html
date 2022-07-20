@@ -42,8 +42,28 @@
              th:errors="*{speed}">
 
         </div>
+        <label>Tarix</label>
+        <input type="date"
+               class="form-control"
+               th:field="*{madeDate}">
 
-        <input type="submit" value="Yadda saxla"
+        <div style="color: red;font-weight:bold"
+             th:if="${#fields.hasErrors('madeDate')}"
+             th:errors="*{madeDate}">
+        </div>
+
+
+        <label>EMail</label>
+        <input class="form-control"
+               th:field="*{email}">
+        <div style="color: red;font-weight:bold"
+             th:if="${#fields.hasErrors('email')}"
+             th:errors="*{email}">
+        </div>
+
+
+        <input type="submit"
+               value="Yadda saxla"
                class="btn btn-success">
 
         <a class="btn btn-primary" th:href="@{/cars/list}">Geri qayıt</a>

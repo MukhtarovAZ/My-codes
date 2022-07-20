@@ -30,6 +30,8 @@ public class CarRepository {
                 Car c = new Car(rs.getInt("id"),
                         rs.getString("brand"),
                         rs.getInt("speed"));
+                c.setMadeDate(rs.getDate("made_date"));
+                c.setEmail(rs.getString("email"));
                 cars.add(c);
             }
             rs.close();
@@ -48,8 +50,9 @@ public class CarRepository {
             Statement st = conn.createStatement();
 
             Statement stm = conn.createStatement();
-            st.executeUpdate("insert into cars (brand,speed)" +
-                    "values ('" + c.getBrand() + "'" + c.getSpeed() + ");");
+            st.executeUpdate("insert into cars (brand,speed,made_date)" +
+                    "values ('" + c.getBrand() + "'" + c.getSpeed() +",'"+c.getMadeDate()+"','"+c.getEmail()+"');");
+
 
             st.close();
             conn.close();
@@ -106,7 +109,7 @@ public class CarRepository {
                         rs.getString("brand"),
                         rs.getInt("speed"));
 
-            }
+                car.setMadeDate(rs.getDate("made_date"));}
             rs.close();
             st.close();
             conn.close();
@@ -124,7 +127,7 @@ public class CarRepository {
 
             Statement stm = conn.createStatement();
             st.executeUpdate("update cars set brand='"+c.getBrand()+"" +
-                    "',speed='"+c.getSpeed()+"' where id-" + c.getId()   );
+                    "',speed='"+c.getSpeed()+"',made_date='"+c.getMadeDate()+"' where id-" + c.getId()   );
 
             st.close();
             conn.close();

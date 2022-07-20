@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
 
 @Controller
 @RequestMapping("/cars")
@@ -26,6 +27,9 @@ public class CarController {
     @GetMapping("/show-save-page")
     public String showSavePage(Model model){
         Car c=new Car();
+        c.setBrand("Ford");
+        c.setSpeed(200);
+        c.setMadeDate(new Date(1_009_843_200_000L));
         model.addAttribute("car",c);
         model.addAttribute("header","Yeni qeydiyyat");
 

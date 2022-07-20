@@ -26,7 +26,10 @@
         <th>Nomre</th>
         <th>Suret</th>
         <th>Marka</th>
+        <th>Tarix</th>
+        <th>Email</th>
         <th>Emeliyatlar</th>
+
     </tr>
     </thead>
     <tbody>
@@ -34,6 +37,8 @@
         <td th:text="${c.id}"></td>
         <td th:text="${c.speed}"></td>
         <td th:text="${c.brand}"></td>
+        <td th:text="${c.madeDate}"></td>
+        <td th:text="${c.email}"></td>
         <td >
             <a onclick="return confirm('eminsen?');" th:href="@{/cars/delete/{id}(id=${c.id})}">Sil</a>
             <a th:href="@{/cars/edit/{id}(id=${c.id})}">Redakte</a>
