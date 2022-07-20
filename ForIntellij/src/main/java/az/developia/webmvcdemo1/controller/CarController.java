@@ -5,6 +5,7 @@ import az.developia.webmvcdemo1.model.Car;
 import az.developia.webmvcdemo1.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,6 +23,7 @@ public class CarController {
 
 
     @GetMapping("/list")
+    @PreAuthorize(value = "hasAuthority('list:cars')")
     public String showCarsPage(Model model) {
         model.addAttribute("cars", carService.getAllCars());
         return "cars";

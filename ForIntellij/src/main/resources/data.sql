@@ -33,5 +33,6 @@ create table authorities
 insert into authorities(username, authority)
  VALUES ( 'rufet','abc' ),
         ( 'elbru','abc' ),
+        ( 'elbru','list:cars' ),
         ( 'resad','abc' ),
         ( 'nihad','abc' );
