@@ -13,3 +13,25 @@ values
 ('Hyundai',303,'2000-05-06'),
 ('Tesla',300,'2000-05-06')
 ;
+
+
+create table users
+(username varchar(30) not null primary key,
+password varchar(100) not null,
+enabled int );
+
+insert into users (username, password, enabled)
+values ('rufet','{bcrypt}1',1),
+       ('elbrus','{noop}1',1),
+       ('nihad','{noop}1',1),
+       ('resad','{noop}1',1);
+
+create table authorities
+(username varchar(30) not null ,
+ authority varchar(100) not null);
+
+insert into authorities(username, authority)
+ VALUES ( 'rufet','abc' ),
+        ( 'elbru','abc' ),
+        ( 'resad','abc' ),
+        ( 'nihad','abc' );
