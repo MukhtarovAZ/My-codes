@@ -4,9 +4,11 @@ import az.developia.webmvcdemo1.model.Car;
 
 import az.developia.webmvcdemo1.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -63,6 +65,12 @@ public class CarController {
         model.addAttribute("car",c);
         model.addAttribute("header","Masin redaktesi");
         return "car-save";
+    }
+    @InitBinder
+    private void dada(WebDataBinder binder){
+        StringTrimmerEditor e=new StringTrimmerEditor(true);
+        binder.registerCustomEditor(String.class,e);
+
     }
 
 

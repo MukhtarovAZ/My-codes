@@ -1,5 +1,7 @@
 package az.developia.webmvcdemo1.model;
 
+import az.developia.webmvcdemo1.validation.EdedOlmalidir;
+import az.developia.webmvcdemo1.validation.Java3;
 import lombok.*;
 
 import javax.validation.constraints.*;
@@ -13,10 +15,13 @@ public class Car {
     private Integer id;
     @Size(min = 2, message = "Marka minimum 2 simvol olmalıdır")
     @Size(max = 20, message = "Marka Maximum 2 simvol olmalıdır")
+    @Java3
+    @Trim
     private String brand;
-    @Min(value = 100)
-    @NotNull
-    @Max(value = 1000)
+   // @Min(value = 100)
+   // @NotNull
+   // @Max(value = 1000)
+    @EdedOlmalidir
     private Integer speed;
     @Past
     private Date madeDate;
