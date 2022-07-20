@@ -29,9 +29,9 @@ public class CarRepository {
             while (rs.next()) {
                 Car c = new Car(rs.getInt("id"),
                         rs.getString("brand"),
-                        rs.getInt("speed"));
-                c.setMadeDate(rs.getDate("made_date"));
-                c.setEmail(rs.getString("email"));
+                        rs.getInt("speed"),
+                        rs.getDate("made_date"),
+                        rs.getString("email") );
                 cars.add(c);
             }
             rs.close();
@@ -107,9 +107,10 @@ public class CarRepository {
             if (rs.next()) {
                 car = new Car(rs.getInt("id"),
                         rs.getString("brand"),
-                        rs.getInt("speed"));
-
-                car.setMadeDate(rs.getDate("made_date"));}
+                        rs.getInt("speed"),
+                        rs.getDate("made_date"),
+                        rs.getString("email"));
+            }
             rs.close();
             st.close();
             conn.close();
