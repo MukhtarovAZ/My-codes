@@ -32,7 +32,12 @@ create table authorities
 
 insert into authorities(username, authority)
  VALUES ( 'rufet','abc' ),
-        ( 'elbru','abc' ),
-        ( 'elbru','list:cars' ),
-        ( 'resad','abc' ),
+        ( 'elbrus','abc' ),
+        ( 'elbrus','list:cars' ),
+        ( 'elbrus','open:save:car'),
+        ( 'elbrus','save:car' ),
+        ( 'resad','open:edit:car'),
+        ( 'resad','list:cars' ),
+        ( 'nihad','list:cars'),
+        ( 'nihad','delete:car' ),
         ( 'nihad','abc' );

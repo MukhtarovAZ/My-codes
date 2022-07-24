@@ -29,6 +29,7 @@ public class CarController {
         return "cars";
     }
     @GetMapping("/show-save-page")
+    @PreAuthorize(value = "hasAuthority('open:save:car')")
     public String showSavePage(Model model){
         Car c=new Car();
         c.setBrand("Ford");
@@ -41,6 +42,7 @@ public class CarController {
     }
 
     @PostMapping("/save")
+    @PreAuthorize(value = "hasAuthority('save:car')")
     public String save(@Valid @ModelAttribute(name = "car") Car c, BindingResult br){
         if(br.hasErrors()){
             return "car-save";
@@ -55,11 +57,13 @@ public class CarController {
     }
 
     @GetMapping("/delete/{id}")
+    @PreAuthorize(value = "hasAuthority('delete:car')")
     public String delete(@PathVariable Integer id) {
         carService.deleteById(id);
         return "redirect:/cars/list;";
     }
     @GetMapping("/edit/{id}")
+    @PreAuthorize(value = "hasAuthority('open:edit:car')")
     public String showEditPage(@PathVariable Integer id,Model model) {
 
         Car c=carService.findById(id);
@@ -75,6 +79,7 @@ public class CarController {
 
     }
     @GetMapping("/search")
+    @PreAuthorize(value = "hasAuthority('search:car')")
     public String search(@RequestParam(name = "brand")String brand,
                          Model model) {
         model.addAttribute("cars",carService.searchCars(brand));

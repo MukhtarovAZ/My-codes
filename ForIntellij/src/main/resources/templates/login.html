@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login sehifesi</title>
+</head>
+<body>
+<form th:action="@{/auth-user}" method="POST">
+    <input name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Giris">
+</form>
+
+</body>
+</html>

@@ -4,6 +4,8 @@ package az.developia.webmvcdemo1.repository
 import az.developia.webmvcdemo1.model.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -12,6 +14,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 
 @Repository
 public class CarRepository {
