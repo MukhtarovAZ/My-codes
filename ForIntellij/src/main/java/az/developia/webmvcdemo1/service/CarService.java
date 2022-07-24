@@ -28,7 +28,6 @@ public class CarService {
         return carRepository.findById(id);
     }
 
-
     public void edit(Car c) {
         carRepository.edit(c);
     }

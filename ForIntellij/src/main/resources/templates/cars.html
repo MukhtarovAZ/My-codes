@@ -24,6 +24,7 @@
 <a th:href="@{/cars/show-save-page}">Yeni masin</a>
 
 <h1>Masinlar</h1>
+<h1>stifadeci adi : <span  th:text="${username}"> </span></h1>
 <form th:action="@{/cars/search}" method="get">
     <input name="brand">
 </form>

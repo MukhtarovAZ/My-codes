@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeni Hesab</title>
+</head>
+<body>
+<form
+        th:object="${user}"
+        th:action="@{/create-account-save}" method="POST">
+    <input th:field="*{username}">
+    <input type="password" th:field="*{password}">
+    <input type="submit" value="Giris">
+    <p>Hesabin var?</p>
+    <a th:href="@{/my-login}">Login ol</a>
+</form>
+
+</body>
+</html>

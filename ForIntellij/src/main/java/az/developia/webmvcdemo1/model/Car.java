@@ -17,9 +17,7 @@ public class Car {
     @Size(max = 20, message = "Marka Maximum 2 simvol olmalıdır")
     @Java3
     private String brand;
-   // @Min(value = 100)
-   // @NotNull
-   // @Max(value = 1000)
+
     @EdedOlmalidir
     private Integer speed;
     @Past
